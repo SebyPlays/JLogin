@@ -1,12 +1,12 @@
 # JLogin Documentation
 
-# What is JLogin?
+## What is JLogin?
 -
-
+```
 Simply, JLogin is a fundament of an authentication system, that manages registering users and logging in.
+´´´
 
-
-# How do i use it?
+## How do i use it?
 -
 
 The usage of JLogin is very simple, 
@@ -16,7 +16,7 @@ the methods, "login" or "register".
 The JLogin constructor requires your SQL details to be used.
   new JLogin(String host, int port, String database, String username, String password);
 
-//Login methods
+### Login methods
 
   This method is ment to be used for local logins that don't require an IP:
   new JLogin("127.0.0.1", 3306, "JAuth", "default", "default").login(<USERNAME>, <PASSWORD>);
@@ -27,12 +27,12 @@ The JLogin constructor requires your SQL details to be used.
   Both of these methods will return a boolean, so you can wrap them in your own method.
  
  
-//register method
+### register method
 
   This method creates a user with a very unique uuid, and its given credentials.
   new JLogin("127.0.0.1", 3306, "JAuth", "default", "default").register(<USERNAME>, <PASSWORD>, <HIERARCHY(it's an integer)>);
   
-//Options method
+### Options method
   
   This method is an additional method that allows you to configure your auth system precisely.
   new JLogin("127.0.0.1", 3306, "JAuth", "default", "default").
@@ -48,7 +48,7 @@ The JLogin constructor requires your SQL details to be used.
     ex:
       new JLogin("127.0.0.1", 3306, "JAuth", "default", "default").options(HashType.CRC32, true, true, true, 3, LoginAffections.DISABLE_ACCOUNT);
 
-//LoginAffections
+### LoginAffections
   
   The "LoginAffections" class is an enum consisting of 4 elements:
     "DISABLE_ACCOUNT",
@@ -66,7 +66,7 @@ The JLogin constructor requires your SQL details to be used.
     The "ALLOW_LOCAL_ONLY" option is only allowing connects from inside the local host...
       WHEN EXCEEDING THE LIMIT :D 
  
-//Sessions
+### Sessions
   
   This API assigns sessions to users after their login.
   If a user logs on from another location, the user will be suspended from its current session.
